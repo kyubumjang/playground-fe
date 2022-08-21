@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsConfigRootDir": "./",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
+  "rules": {
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
+  }
 }
